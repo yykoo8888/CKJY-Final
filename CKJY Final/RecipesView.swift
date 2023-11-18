@@ -13,6 +13,8 @@ struct RecipesView: View {
     }
 }
 
-#Preview {
-    RecipesView()
+struct RecipesView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecipesView()
+    }
 }

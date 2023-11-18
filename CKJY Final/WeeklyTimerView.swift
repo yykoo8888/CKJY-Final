@@ -33,6 +33,8 @@ struct WeeklyTimerView: View {
     }
 }
 
-#Preview {
-    WeeklyTimerView()
+struct WeeklyTimerView_Previews: PreviewProvider {
+    static var previews: some View {
+        WeeklyTimerView()
+    }
 }

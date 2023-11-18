@@ -17,7 +17,7 @@ struct ProgressView: View {
             ZStack {
                 Circle()
                     .stroke( // 1
-                        Color.pink.opacity(0.5),
+                        Color.blue.opacity(0.5),
                         lineWidth: 30
                     )
                 Circle() // 2
@@ -50,6 +50,9 @@ struct ProgressView: View {
     }
 }
 
-#Preview {
-    ProgressView()
+struct ProgressView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProgressView()
+    }
 }
+
