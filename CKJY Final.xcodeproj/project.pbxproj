@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		936D5D0B2B08576A009D33F5 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D5D0A2B08576A009D33F5 /* ProgressView.swift */; };
+		936D5D0D2B085815009D33F5 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D5D0C2B085815009D33F5 /* RecipesView.swift */; };
+		936D5D0F2B08581F009D33F5 /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D5D0E2B08581F009D33F5 /* FoodListView.swift */; };
 		D1E9D3572B08503800BA45C8 /* CKJY_FinalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E9D3562B08503800BA45C8 /* CKJY_FinalApp.swift */; };
 		D1E9D3592B08503800BA45C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E9D3582B08503800BA45C8 /* ContentView.swift */; };
 		D1E9D35B2B08503A00BA45C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E9D35A2B08503A00BA45C8 /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		936D5D0A2B08576A009D33F5 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		936D5D0C2B085815009D33F5 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
+		936D5D0E2B08581F009D33F5 /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
 		D1E9D3532B08503800BA45C8 /* CKJY Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CKJY Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E9D3562B08503800BA45C8 /* CKJY_FinalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKJY_FinalApp.swift; sourceTree = "<group>"; };
 		D1E9D3582B08503800BA45C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +102,9 @@
 			children = (
 				D1E9D3562B08503800BA45C8 /* CKJY_FinalApp.swift */,
 				D1E9D3582B08503800BA45C8 /* ContentView.swift */,
+				936D5D0C2B085815009D33F5 /* RecipesView.swift */,
+				936D5D0E2B08581F009D33F5 /* FoodListView.swift */,
+				936D5D0A2B08576A009D33F5 /* ProgressView.swift */,
 				D1E9D35A2B08503A00BA45C8 /* Assets.xcassets */,
 				D1E9D35C2B08503A00BA45C8 /* Preview Content */,
 			);
@@ -257,8 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936D5D0F2B08581F009D33F5 /* FoodListView.swift in Sources */,
 				D1E9D3592B08503800BA45C8 /* ContentView.swift in Sources */,
 				D1E9D3572B08503800BA45C8 /* CKJY_FinalApp.swift in Sources */,
+				936D5D0D2B085815009D33F5 /* RecipesView.swift in Sources */,
+				936D5D0B2B08576A009D33F5 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
