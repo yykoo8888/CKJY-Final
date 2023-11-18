@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct ProgressView: View {
+    
+    @State private var leaves = 0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Stepper("\(leaves) times rickrolled", value: $leaves)
+                    .padding(20)
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(30)
+            }
+            .padding()
+        }
     }
 }
 
