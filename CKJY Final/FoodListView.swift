@@ -13,6 +13,9 @@ struct FoodListView: View {
     }
 }
 
-#Preview {
-    FoodListView()
+struct FoodListView_Previews: PreviewProvider {
+    static var previews: some View {
+        FoodListView()
+    }
 }
+
