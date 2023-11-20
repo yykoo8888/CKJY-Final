@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProgressView: View {
     
-    @State var leaves = 0
-    @State var leafGoal = 10
+    @State private var leaves = 0
+    @State private var leafGoal = 10
     let lastActionDateKey = "lastActionDate"
     
     var body: some View {
@@ -23,7 +23,7 @@ struct ProgressView: View {
                     )
                 Circle() // 2
                     .trim(from: 0, to: CGFloat(leaves) / CGFloat(leafGoal)) // 1
-                    .stroke(Color.pink,
+                    .stroke(Color.blue,
                             style: StrokeStyle(
                                 lineWidth: 30,
                                 lineCap: .round
