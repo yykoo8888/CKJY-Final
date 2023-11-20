@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Ingredient: Identifiable {
+struct Ingredient: Identifiable, Codable {
     let id = UUID()
     var name: String
     var points = ""

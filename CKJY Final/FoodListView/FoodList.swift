@@ -198,6 +198,13 @@ struct FoodListView: View {
                  ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
                  }
+                  ToolbarItem(placement: .navigationBarTrailing) {
+                      Button {
+                          //action here (search bar appears)
+                      } label: {
+                          Image(systemName: "plus")
+                      }
+                  }
               }
 
         }
