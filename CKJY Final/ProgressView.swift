@@ -11,6 +11,7 @@ struct ProgressView: View {
     
     @State var leaves = 0
     @State var leafGoal = 10
+    let lastActionDateKey = "lastActionDate"
     
     var body: some View {
         VStack {
@@ -46,8 +47,26 @@ struct ProgressView: View {
             }
             .padding()
         }
+        .onAppear {
+            performActionIfNeeded()
+        }
         
     }
+    
+    func performActionIfNeeded() {
+        let calendar = Calendar.current
+        let now = Date()
+
+        // Check if today is Monday
+        if calendar.component(.weekday, from: now) == 2 {
+            // Perform your action here
+            print("Action performed on Monday!")
+
+            // Update UserDefaults with the current date
+            UserDefaults.standard.set(now, forKey: lastActionDateKey)
+        }
+    }
+    
 }
 
 struct ProgressView_Previews: PreviewProvider {
