@@ -165,12 +165,6 @@ struct FoodListView: View {
         Ingredient(name: "Red wine", healthyRating: .neutral)
         
         
-        
-        
-        
-        
-        
-        
     ]
     
     var body: some View {
