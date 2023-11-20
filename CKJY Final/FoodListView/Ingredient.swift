@@ -8,14 +8,9 @@
 import Foundation
 
 struct Ingredient: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     var name: String
     var points = ""
-    var healthyRating: healthyRating
+    var healthyRating: Int
     var isEaten: Bool = false
-    enum healthyRating {
-        case healthy
-        case unhealthy
-        case neutral
-    }
 }
