@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct Ingredient {
+struct Ingredient: Identifiable {
+    let id = UUID()
     var name: String
     var healthyRating: healthyRating
+    var isEaten: Bool = false
     enum healthyRating {
         case healthy
         case unhealthy

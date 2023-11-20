@@ -167,11 +167,17 @@ struct FoodListView: View {
         
         
     ]
-    @State private var todos = [Todo(title: "Broccoli"), Todo(title: "Carrots"), Todo(title: "Chocolate")]
     
     var body: some View {
-        List(todos) { todo in
-            Text(todo.title)
+        NavigationStack {
+            List(ingredients) { ingredient in
+                HStack {
+                    Image(systemName: ingredient.isEaten ? "checkmark.circle.fill" : "circle")
+                    Text(ingredient.name)
+                        .strikethrough(ingredient.isEaten)
+                }
+            }
+            .navigationTitle("My Food List")
         }
     }
 }
