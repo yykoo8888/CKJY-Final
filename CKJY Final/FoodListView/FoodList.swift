@@ -10,11 +10,11 @@ import SwiftUI
 struct FoodListView: View {
     
     @State private var ingredients = [
-        Ingredient(name: "Agar-agar", points: "1", healthyRating: .neutral),
-        Ingredient(name: "Alcohol", healthyRating: .neutral),
-        Ingredient(name: "Apple cider", healthyRating: .neutral),
-        Ingredient(name: "Almond butter", healthyRating: .healthy),
-        Ingredient(name: "Bacon", healthyRating: .unhealthy),
+        Ingredient(name: "Agar-agar", points: "0", healthyRating: .neutral),
+        Ingredient(name: "Alcohol", points: "0", healthyRating: .neutral),
+        Ingredient(name: "Apple cider", points: "0", healthyRating: .neutral),
+        Ingredient(name: "Almond butter", points: "1", healthyRating: .healthy),
+        Ingredient(name: "Bacon", points: "-1", healthyRating: .unhealthy),
         Ingredient(name: "Barley malt syrup", healthyRating: .neutral),
         Ingredient(name: "Beef fat", healthyRating: .unhealthy),
         Ingredient(name: "BHA (butylated hydroxyanisole", healthyRating: .unhealthy),
@@ -170,28 +170,36 @@ struct FoodListView: View {
     
     var body: some View {
         NavigationStack {
-            List($ingredients) { $ingredient in
-                HStack {
-                    Image(systemName: ingredient.isEaten ? "checkmark.circle.fill" : "circle")
-                        .onTapGesture {
-                            ingredient.isEaten.toggle()
-                        }
-                    VStack {
-                        Text(ingredient.name)
-                            .strikethrough(ingredient.isEaten)
-                        if !ingredient.points.isEmpty {
-                            HStack {
-                                Text(ingredient.points)
-                                Image(systemName: "leaf.fill")
+            List {
+                ForEach($ingredients, editActions: [.all]) { $ingredient in
+                    HStack {
+                        Image(systemName: ingredient.isEaten ? "checkmark.circle.fill" : "circle")
+                            .onTapGesture {
+                                ingredient.isEaten.toggle()
                             }
-                            .font(.footnote)
-                            .foregroundColor(.gray)
-                            .strikethrough(ingredient.isEaten)
+                        VStack {
+                            Text(ingredient.name)
+                                .strikethrough(ingredient.isEaten)
+                            if !ingredient.points.isEmpty {
+                                HStack {
+                                    Text(ingredient.points)
+                                    Image(systemName: "leaf.fill")
+                                }
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                                .strikethrough(ingredient.isEaten)
+                            }
                         }
                     }
                 }
             }
-            .navigationTitle("My Food List")
+              .navigationTitle("My Food List")
+              .toolbar {
+                 ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                 }
+              }
+
         }
     }
 }
