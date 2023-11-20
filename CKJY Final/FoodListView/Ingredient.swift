@@ -10,6 +10,7 @@ import Foundation
 struct Ingredient: Identifiable {
     let id = UUID()
     var name: String
+    var points = ""
     var healthyRating: healthyRating
     var isEaten: Bool = false
     enum healthyRating {

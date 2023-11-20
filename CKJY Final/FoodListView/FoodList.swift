@@ -10,7 +10,7 @@ import SwiftUI
 struct FoodListView: View {
     
     @State private var ingredients = [
-        Ingredient(name: "Agar-agar", healthyRating: .neutral),
+        Ingredient(name: "Agar-agar", points: "1", healthyRating: .neutral),
         Ingredient(name: "Alcohol", healthyRating: .neutral),
         Ingredient(name: "Apple cider", healthyRating: .neutral),
         Ingredient(name: "Almond butter", healthyRating: .healthy),
@@ -170,11 +170,25 @@ struct FoodListView: View {
     
     var body: some View {
         NavigationStack {
-            List(ingredients) { ingredient in
+            List($ingredients) { $ingredient in
                 HStack {
                     Image(systemName: ingredient.isEaten ? "checkmark.circle.fill" : "circle")
-                    Text(ingredient.name)
-                        .strikethrough(ingredient.isEaten)
+                        .onTapGesture {
+                            ingredient.isEaten.toggle()
+                        }
+                    VStack {
+                        Text(ingredient.name)
+                            .strikethrough(ingredient.isEaten)
+                        if !ingredient.points.isEmpty {
+                            HStack {
+                                Text(ingredient.points)
+                                Image(systemName: "leaf.fill")
+                            }
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                            .strikethrough(ingredient.isEaten)
+                        }
+                    }
                 }
             }
             .navigationTitle("My Food List")
